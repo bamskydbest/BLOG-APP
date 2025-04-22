@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import log from "./assets/Images/BLOG.png";
 import "./App.css";
@@ -6,10 +6,22 @@ import Nav from "./components/Nav";
 import Home from "./components/pages/Home";
 import { BsGithub, BsInstagram, BsLinkedin, BsWhatsapp } from "react-icons/bs";
 import HomeDetails from "./components/pages/HomeDetails";
+import CreatePost from "./components/pages/CreatePost";
 
 const App: React.FC = () => {
-  const [username, setUsername] = useState<string>("");
-  const [submitted, setSubmitted] = useState<boolean>(false);
+  const [username, setUsername] = useState<string>(
+    () => localStorage.getItem("username") || ""
+  );
+  const [submitted, setSubmitted] = useState<boolean>(
+    () => localStorage.getItem("submitted") === "true"
+  );
+  useEffect(() => {
+    localStorage.setItem("submitted", JSON.stringify(submitted));
+  }, [submitted]);
+
+  useEffect(() => {
+    localStorage.setItem("username", username);
+  }, [username]);
 
   const formatUsername = (name: string) =>
     name ? name.charAt(0).toUpperCase() + name.slice(1).toLowerCase() : "";
@@ -19,7 +31,10 @@ const App: React.FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (username.trim()) setSubmitted(true);
+    if (username.trim()) {
+      setSubmitted(true);
+      localStorage.setItem("username", username);
+    }
   };
 
   return (
@@ -66,19 +81,19 @@ const App: React.FC = () => {
           </div>
         ) : (
           <div className="p-8">
-            {/* w-[30%] mb-[5rem] */}
             <div className=" w-full md:w-1/2 lg:w-1/3 mb-20 ">
               <h2 className="text-2xl text-[#E8C999] mb-4 ">
                 Hello,{" "}
                 <b className="text-[#8E1616] ">{formatUsername(username)}!</b>{" "}
-                Welcome to a world of endless possibilities. Explore our
-                selection of blogs and articles crafted to enrich your life.
+                Welcome to a world of endless possibilities.
               </h2>
             </div>
             {/* Your routes live *inside* the submitted area */}
             <Routes>
               {/* Home page (with the post-creation form) */}
-              <Route path="/" element={<Home username={username} />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/details" element={<CreatePost />} />
+              <Route path="/create" element={<CreatePost />} />
 
               {/* If user tries a route that doesn't exist, stay on Home */}
               <Route path="*" element={<Navigate to="/" replace />} />

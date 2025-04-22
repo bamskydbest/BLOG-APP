@@ -12,6 +12,7 @@ interface Post {
 }
 
 const HomeDetails: React.FC = () => {
+  document.title = "Blog App/details";
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [post, setPost] = useState<Post | null>(null);
