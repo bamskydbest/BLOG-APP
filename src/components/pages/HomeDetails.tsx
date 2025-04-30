@@ -83,6 +83,7 @@ const HomeDetails: React.FC = () => {
       console.error(err);
       setError(err.message || "Update error");
     }
+    alert("Your post has been edited successfully!");
   };
 
   const handleDelete = async () => {
@@ -97,6 +98,7 @@ const HomeDetails: React.FC = () => {
       console.error(err);
       setError(err.message || "Deletion error");
     }
+    alert("Your post has been deleted successfully!");
   };
 
   if (loading) return <p className="p-6 text-center">Loading...</p>;

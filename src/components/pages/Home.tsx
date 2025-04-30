@@ -74,17 +74,25 @@ const Home: React.FC = () => {
                 <p className="italic">By {capitalize(post.author)}</p>
               )}
               {post.content && (
-                <p className="mt-2">
-                  {capitalize(getPreview(post.content))}{" "}
-                  {post.content.split(/\s+/).length > 30 && (
-                    <Link
-                      to={`/post/${post.id}`}
-                      className="text-[#8E1616] underline"
-                    >
-                      Read more
-                    </Link>
-                  )}
-                </p>
+                <div className="mt-2">
+                  <p className="mb-4">
+                    {capitalize(getPreview(post.content))}{" "}
+                    {post.content.split(/\s+/).length > 30 && (
+                      <Link
+                        to={`/post/${post.id}`}
+                        className="text-[#8E1616] underline"
+                      >
+                        {/* Read more */}
+                      </Link>
+                    )}
+                  </p>
+                  <Link
+                    to={`/post/${post.id}`}
+                    className="bg-[#8E1616] text-white px-4 py-2 rounded hover:opacity-90 mt-4"
+                  >
+                    View Details
+                  </Link>
+                </div>
               )}
             </li>
           ))}

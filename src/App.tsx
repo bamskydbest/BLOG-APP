@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, Link } from "react-router-dom";
 import log from "./assets/Images/BLOG.png";
 import "./App.css";
 import Nav from "./components/Nav";
@@ -41,7 +41,9 @@ const App: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-[#F8EED7]">
       <header>
         <div className="flex items-center p-4 border-b">
-          <img src={log} alt="logo" className="w-16 h-16 mr-4" />
+          <Link to="/">
+            <img src={log} alt="logo" className="w-16 h-16 mr-4" />
+          </Link>
           <Nav />
         </div>
       </header>
