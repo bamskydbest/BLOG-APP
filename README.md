@@ -1,54 +1,179 @@
-# React + TypeScript + Vite
+<a name="readme-top"></a>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center"><br/></div>
 
-Currently, two official plugins are available:
+<!-- TABLE OF CONTENTS -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 📗 Table of Contents
 
-## Expanding the ESLint configuration
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 \[BLOG-APP\] ](#-BLOG-APP-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+  - [🚀 Live Demo ](#-live-demo-)
+    - [**BLOG-APP**](#live-demo)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage ](#usage-)
+    - [Run tests ](#run-tests-)
+    - [Deployment ](#deployment-)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<!-- PROJECT DESCRIPTION -->
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+# 📖 [BLOG-APP] <a name="about-project"></a>
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**[BLOG-APP](https://blogappchat.netlify.app/)** is a website for making you post anything you have on your mind. It is a Single Page App (SPA) built with react and typescript that allow users to:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- [x] Make a simple Post.
+- [x] Read a random post already made on the app.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+The app is built by first building the core functionality, which is to make a post that is able to show in the UI immediately you confirm to make the post, also you can edit or delete the post you made. After this step is concluded, it is used as part of the website that includes 3 sub-pages. Enjoy!
+
+## 🛠 Built With <a name="built-with"></a>
+
+### Tech Stack <a name="tech-stack"></a>
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JAVASCRIPT</li>
+    <li>REACT</li>
+    <li>TYPESCRIPT</li>
+
+  </ul>
+</details>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+### **[BLOG-APP](https://blogappchat.netlify.app/)**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Prerequisites
+
+In order to run this project you need:
+
+<ul>
+    <li>The current version of node</li>
+    <li>To have Git installed on your local machine</li>
+    <li>Node Package manager (npm) </li>
+    <li>An editor such as Visual Studio Code</li>
+  </ul>
+  
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Setup
+
+Clone this repository to your desired folder:
+
+<ul>
+    <li>Create your classic access token from github.com</li>
+    <li>run "git clone https://{access_token}@github.com/username/{repo_name}.git"</li>
+    <li>Update your git identity by running "git config --global user.email "your_email@gmail.com""</li>
+    <li>Update your name on git by running "git config --global user.name "your_name"</li>
+    <li>Install json-server : npm install -g json-server@0.17.4    # NPM</li>
+    <li>Create a db.json file </li>
+    <li>Start JSON Server : json-server --watch db.json</li>
+
+  </ul>
+  
+  <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Install
+
+Install this project with:
+
+````sh
+- npm install
+
+You can deploy this project using:
+
+- github pages
+- vercel
+- netlify
+
+```sh
+- npm run deploy
+````
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **Author: Mahmoud Abdulmajeed Taiye**
+
+- GitHub: [@githubhandle](https://github.com/bamskydbest)
+- Twitter: [@twitterhandle](https://x.com/Aladagbangba/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mahmoud-abdulmajeed-taiye)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **[Post categories]**
+- [ ] **[Comments and Reactions on post]**
+- [ ] **[Number Of Visited and Registered Users ]**
+- [ ] **[Pagination ]**
+- [ ] **[Ads ]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/bamskydbest/BLOG-APP/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project, kindly drop a star for me.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to use this medium to appreciate Mr Ismaila Damilare for helping with this project.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
